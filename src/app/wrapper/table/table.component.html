@@ -1,0 +1,132 @@
+<div class="table_wrapper">
+  <div class="redaction">
+    <img
+      class="add"
+      src="../../../assets/icons/Add_Disable.svg"
+      alt="add"
+      (click)="showDialog(add_modal)"
+    />
+    <img
+      class="delete"
+      src="../../../assets/icons/Delete_Disable.svg"
+      alt="delete"
+      (click)="showDialog(delete_modal)"
+    />
+  </div>
+  <table tuiTable class="tui-table">
+    <thead>
+      <tr  class="tui-table__tr tui-table__tr_border_none">
+        <th
+          
+          
+          class="tui-table__th tui-table__th_first_border_none"
+        >
+        <form [formGroup]="toggleCheckbox">
+          <div class="name">
+            <tui-checkbox formControlName="checkboxHead" size="m"></tui-checkbox>
+            <span>Имя</span>
+          </div>
+        </form>
+        </th>
+        <th   class="tui-table__th">Фамилия</th>
+        <th   class="tui-table__th email">email</th>
+        <th
+          
+          
+          class="tui-table__th phone tui-table__th_last_border_none"
+        >
+          Телефон
+        </th>
+      </tr>
+    </thead>
+    <div class="line"></div>
+    <tbody tuiTbody *ngFor="let item of userdata">
+      <tr  class="tui-table__tr tui-table__tr">
+        <td  class="tui-table__td tui-table__td_first_border_none">
+          <form [formGroup]="toggleCheckbox">
+          <div class="name">
+            <tui-checkbox formControlName="checkboxBody" size="m"></tui-checkbox>
+            <span>{{item.name}}</span>
+          </div>
+        </form>
+        </td>
+        <td  class="tui-table__td">{{item.surname}}</td>
+        <td  class="tui-table__td email">{{item.email}}</td>
+        <td  class="tui-table__td phone tui-table__td_last_border_none">
+          {{item.phone}}
+        </td>
+      </tr>
+      <div class="line"></div>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #add_modal let-observer>
+  <div class="add_modal">
+    <form [formGroup]="form">
+    <p>Новый клиент</p>
+    <tui-input formControlName="name">
+      Имя
+      <input tuiTextfield />
+    </tui-input>
+    <tui-input formControlName="surname">
+      Фамилия
+      <input tuiTextfield />
+    </tui-input>
+    <tui-input formControlName="email">
+      email
+      <input tuiTextfield />
+    </tui-input>
+      <tui-input-phone
+        formControlName="phone"
+        countryCode="+7"
+        phoneMaskAfterCountryCode="(###) ###-##-##"
+        >Телефон</tui-input-phone
+      >
+    </form>
+    <div class="buttons_container">
+      <button
+        appearance="flat"
+        tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+      >
+        Отмена
+      </button>
+      <button
+        (click)="addNewUser()"
+        appearance="primary"
+        tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+      >
+        Сохранить
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #delete_modal let-observer>
+  <div class="delete_modal">
+    <p>Удаление строк</p>
+    <span>Удалить выбранные строки (1)?</span>
+    <div class="buttons_container">
+      <button
+        appearance="flat"
+        tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+      >
+        Отмена
+      </button>
+      <button
+        appearance="primary"
+        tuiButton
+        type="button"
+        class="tui-space_right-3 tui-space_bottom-3"
+      >
+        Удалить
+      </button>
+    </div>
+  </div>
+</ng-template>

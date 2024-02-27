@@ -1,0 +1,112 @@
+.table_wrapper{
+    border-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: white;
+}
+
+table{
+    margin-top: 1rem;
+}
+
+.line{
+    height: 1px;
+    width: 100%;
+    background-color: rgb(171, 171, 172, 0.16);
+}
+
+tbody{
+    margin-top: 1rem;
+}
+
+td{
+    height: 60px;
+}
+
+th{
+    height: 47px;
+}
+
+tr{
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15%;
+}
+
+.email, .phone{
+    text-align: end;
+}
+
+th{
+    color: #2F4C97;
+    font-size: 12px;
+    font-weight: bold;
+   
+}
+
+td{
+    font-size: 14px;
+
+}
+
+tui-checkbox{
+    margin-top: 3.5px;
+}
+
+.name{
+    display: flex;
+    margin-left: 1px;
+}
+
+.name span{
+    margin-left: 0.2rem;
+}
+
+.redaction{
+    display: flex;
+    margin-left: 11px;
+    padding-top: 18px;
+}
+
+.redaction img{
+    cursor: pointer;
+    height: 30px;
+}
+
+tui-input, tui-input-phone{
+    margin-top: 40px;
+    // width: 368px;
+}
+
+.buttons_container{
+    margin-top: 40px;
+    display: flex;
+    justify-content: end;
+    // width: 368px;
+}
+
+.tui-space_right-3{
+    border-radius: 37px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.add_modal, .delete_modal p{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: left;
+}
+
+thead{
+    border-bottom: 2px solid;
+    border-color: black;
+}
+
+tbody:last-child {
+    border: 1px solid white;
+}
+
+.line:last-child {
+    display: none;
+}

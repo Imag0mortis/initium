@@ -1,0 +1,26 @@
+$main_bg: '#fff';
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: lighter;
+  src: local('Roboto'),
+    url('../src/app/fonts/Roboto-Regular.ttf') format(truetype);
+}
+
+:root {
+  --tui-primary: #2F67D5;
+
+  --tui-primary-hover: #D8DEE9;
+
+  --tui-error-fill: #e12067;
+  --tui-negative: #e12067;
+  --tui-disabled-opacity: 0.66;
+  --tui-text-01: #333;
+  --tui-heading-font: 'Roboto', sans-serif;
+  --tui-text-font: 'Roboto', sans-serif;
+  --tui-secondary: rgb(56 201 149 / 20%);
+  --tui-link: #2F67D5;
+  --tui-base-02: #F6F9FF;
+
+  --tui-success-fill: #3C7CF8;
+}
